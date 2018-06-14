@@ -60,10 +60,10 @@ if (state_ == "KL"){
 Basically, all the conditions are checked to ensure that such a change of lane is feasible. For both the ChnageLeft and ChangeRight states, the code is just to make sure that the desired d position has been reached and the machine returns back to the KeepLane state.
 
 #### 3. Trajectory generation
-This part is located at `bp.cpp`within line 127-228. The main part is pretty similar to the Walkthough video so I will just mention about the modification. First, I develop the speed controller to ensure that the ego vehicle is not going to crash the cars in the front. It's a fairly simple logic by checking if the distance to the closet front car is within the safe distance (`dist_safe = 35 * ref_v_/goal_v_;`) and reducing the speed (with maximum allowed negative acceleration) to the highest possible lane speed, which is the speed of the front car. If there are no cars ahead of the ego, the speed is increased to the maximum allowed speed ~ 50MPH.
+This part is located at `bp.cpp`within line 127-228. The main part is pretty similar to the Walkthrough video so I will just mention about the modification. First, I develop the speed controller to ensure that the ego vehicle is not going to crash the cars in the front. It's a fairly simple logic by checking if the distance to the closet front car is within the safe distance (`dist_safe = 35 * ref_v_/goal_v_;`) and reducing the speed (with maximum allowed negative acceleration) to the highest possible lane speed, which is the speed of the front car. If there are no cars ahead of the ego, the speed is increased to the maximum allowed speed ~ 50MPH.
 
 ## Improvement
-1. I was able to ran the simulator without any issues around 30 mins, but I am not sure whether the algorithm is perfect or not as I did not test it for a whole day. Maybe, for the follow-up tasks, the algorithm should be tested for longer than a day to ensure reliability.
+1. I was able to ran the simulator without any issues around 50 mins, but I am not sure whether the algorithm is perfect or not as I did not test it for a whole day. Maybe, for the follow-up tasks, the algorithm should be tested for longer than a day to ensure reliability.
 
 <img src="./assets/shot3.png" width = "400"/>
 
